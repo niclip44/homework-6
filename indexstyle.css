@@ -3,7 +3,10 @@ background-color: SlateBlue;
   text-align:center;
 }
 
-.myChart{
- align: center; 
+canvas{
+display: block;
+  margin-left: auto;
+  margin-right: auto;
   
-}
+  }
+
