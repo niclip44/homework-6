@@ -1,6 +1,9 @@
 body {
 background-color: Azure;
-  text-align:center;
+}
+
+h1{
+  text-align: center;
 }
 
 canvas{
