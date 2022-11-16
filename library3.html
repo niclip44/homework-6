@@ -2,56 +2,87 @@
 <html>
 	
 	<head>
-		<meta charset="utf-8">
-		<title>My first three.js app</title>
-		<style>
-			body { margin: 0; }
-		</style>
+		
 	</head>
 	<body>
-		<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-
-<script type="importmap">
-  {
-    "imports": {
-      "three": "https://unpkg.com/three@<version>/build/three.module.js"
-    }
-  }
-</script>
-
-<script type="module">
-
-  import * as THREE from 'three';
-
-  const scene = new THREE.Scene();
-
-</script>
-		<script src="js/three.js"></script>
-		<script>
-			const scene = new THREE.Scene();
-			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-			const renderer = new THREE.WebGLRenderer();
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
-
-			const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			const cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
-
-			camera.position.z = 5;
-
-			function animate() {
-				requestAnimationFrame( animate );
-
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.01;
-
-				renderer.render( scene, camera );
-			};
-
-			animate();
-		</script>
+	<div class="dynamic active highlight highlight-javascript">
+  <pre>
+<span class="pl-k">&lt;</span>script src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>./dist/nipplejs.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;/</span>script<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
+    <span class="pl-k">var</span> dynamic <span class="pl-k">=</span> nipplejs.create({
+        zone: document.getElementById('dynamic'),
+        color: 'blue'
+    });
+<span class="pl-k">&lt;/</span>script<span class="pl-k">&gt;</span></pre>
+</div>
+<div class="semi highlight highlight-javascript">
+  <pre>
+<span class="pl-k">&lt;</span>script src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>./dist/nipplejs.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;/</span>script<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
+    <span class="pl-k">var</span> semi <span class="pl-k">=</span> nipplejs.create({
+        zone: document.getElementById('semi'),
+        mode: 'semi',
+        catchDistance: 150,
+        color: 'white'
+    });
+<span class="pl-k">&lt;/</span>script<span class="pl-k">&gt;</span></pre>
+</div>
+<div class="static highlight highlight-javascript">
+  <pre>
+<span class="pl-k">&lt;</span>script src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>./dist/nipplejs.min.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;/</span>script<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
+    <span class="pl-k">var</span> static <span class="pl-k">=</span> nipplejs.create({
+        zone: document.getElementById('static'),
+        mode: 'static',
+        position: {left: '50%', top: '50%'},
+        color: 'red'
+    });
+<span class="pl-k">&lt;/</span>script<span class="pl-k">&gt;</span></pre>
+</div>
+<p>Choose the mode you want to test.</p>
+<div id="buttons">
+  <div data-type="dynamic" class="active button dynamic">dynamic</div>
+  <div data-type="semi" class="button semi">semi</div>
+  <div data-type="static" class="button static">static</div>
+</div>
+<div id="zone_joystick">
+  <div id="debug">
+    <ul>
+      <li class="position">
+        position :
+        <ul>
+          <li class="x">x : <span class='data'></span></li>
+          <li class="y">y : <span class='data'></span></li>
+        </ul>
+      </li>
+      <li class="force">force : <span class='data'></span></li>
+      <li class="pressure">pressure : <span class='data'></span></li>
+      <li class="distance">distance : <span class='data'></span></li>
+      <li class="angle">
+        angle :
+        <ul>
+          <li class="radian">radian : <span class='data'></span></li>
+          <li class="degree">degree : <span class='data'></span></li>
+        </ul>
+      </li>
+      <li class="direction">
+        direction :
+        <ul>
+          <li class="x">x : <span class='data'></span></li>
+          <li class="y">y : <span class='data'></span></li>
+          <li class="angle">angle : <span class='data'></span></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="dump"></div>
+  </div>
+  <div class="zone dynamic active"><h1>dynamic</h1></div>
+  <div class="zone semi"><h1>semi</h1></div>
+  <div class="zone static"><h1>static</h1></div>
+</div>
+<br/>
+<div>
+  <a href="https://codepen.io/YoannM/full/gapmMG" target="_blank">> Open the demo in a new window.</a>
+</div>
 	</body>
 </html>
