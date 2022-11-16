@@ -1,163 +1,40 @@
 <html>
     <head>
-        <title>Im sorry about this one...</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="fartscroll.js"></script>
-        <script>
-        $(document).ready(function() {
-            // Ensure the page always has more scrolling
-            $(document).scroll(function() {
-                while ((window.pageYOffset + window.innerHeight) >= $(this).height() - (window.innerHeight / 2)) {
-                    $('ul').append('<li>Testing.</li>');
-                }
-            }).scroll();
+        
+        <title>comcastify.js - Sometimes images just load too damned fast!</title>
 
-            fartscroll(800);
-        });
-        </script>
     </head>
+
     <body>
-        <ul>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-            <li>Testing.</li>
-        </ul>
+
+        <div style="width: 100px; display: inline-block;">
+            <img style="width:100%" src="baby-sloth.jpg" alt="http://violetadams.deviantart.com/art/Baby-sloth-385183627" />
+        </div>
+
+        <div style="width: 100px; display: inline-block;">
+            <image style="width: 100%" src="sloth-close-up.jpg" alt="http://mashable.com/2013/07/20/sloth-makeover/" />
+        </div>
+
+        <div style="width: 100px; display: inline-block;">
+            <image style="width: 100%" src="sloth-hanging.jpg" alt="http://mashable.com/2013/07/20/sloth-makeover/" />
+        </div>
+
+        <div>
+            <img src="sloth.jpg" alt="http://www.wisegeek.com/what-are-the-main-components-of-a-sloth-diet.htm#sloth-in-tree-showing-claws" />
+        </div>
+
+        <script src="../comcastify.js"></script>
+        <script>
+
+            window.onload = comcastifyjs.fixMyImagesLoadingSoFast({
+                boxColor: '#123456',
+                loadMaxPercent: 0.75,
+                loadSpeed: 100,
+                loadIncrement: 5
+            });
+
+        </script>
+
     </body>
+
 </html>
