@@ -1,37 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>	
-	npm i v-charts echarts -S	
-	</head>
-	<body>
-<template>
-  <div>
-    <ve-line :data="chartData"></ve-line>
-  </div>
-</template>
+<html>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<body>
+<div id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
 
 <script>
-import VeLine from 'v-charts/lib/line.common'
-export default {
-  components: { VeLine },
-  data () {
-    return {
-      chartData: {
-        columns: ['date', 'PV'],
-        rows: [
-          { 'date': '01-01', 'PV': 1231 },
-          { 'date': '01-02', 'PV': 1223 },
-          { 'date': '01-03', 'PV': 2123 },
-          { 'date': '01-04', 'PV': 4123 },
-          { 'date': '01-05', 'PV': 3123 },
-          { 'date': '01-06', 'PV': 7123 }
-        ]
-      }
-    }
-  }
+google.charts.load('current',{packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+// Set Data
+var data = google.visualization.arrayToDataTable([
+  ['Price', 'Size'],
+  [50,7],[60,8],[70,8],[80,9],[90,9],
+  [100,9],[110,10],[120,11],
+  [130,14],[140,14],[150,15]
+]);
+// Set Options
+var options = {
+  title: 'House Prices vs. Size',
+  hAxis: {title: 'Square Meters'},
+  vAxis: {title: 'Price in Millions'},
+  legend: 'none'
+};
+// Draw
+var chart = new google.visualization.LineChart(document.getElementById('myChart'));
+chart.draw(data, options);
 }
 </script>
-		
 
-	</body>
+</body>
 </html>
